@@ -59,3 +59,57 @@ construir APIs RESTful y manejar datos en formato JSON. Este mini proyecto es id
 habilidades en desarrollo web, gestión de datos y diseño de API, y puede ser extendido en el futuro
 para incluir características adicionales como autenticación, manejo de usuarios y
 almacenamiento en bases de datos.
+
+Nombre del Proyecto: Inventario de productos:
+
+Index.js:
+
+1)Primero se hacen las importaciones: 
+-Traemos express, path, cors y fs, además de las rutas de productos.
+
+2) Creación de la app: 
+- Con const app = express();
+
+3) Después hacermos las Configuraciones: app.use(express.json()); permite recibir datos en JSON.
+
+4) Definimos el puerto en const port = 3000.
+
+
+5) Servidor: en el http://localhost:3000
+
+
+
+InventarioController:
+
+1) Importaciones: Cargamos path para manejar rutas de archivos y fs para leer y escribir en el sistema de archivos.
+
+2)Ruta de datos: Definimos la ruta del archivo products.json donde guardamos la información de los productos.
+
+3) Funciones principales:
+
+- getAllProducts: Obtiene todos los productos y los devuelve en formato JSON.
+
+- leerProducts: Lee el archivo JSON y devuelve los productos.
+
+- escribirProductos: Escribe los productos de nuevo en el archivo products.json.
+
+- addProduct: Agrega un nuevo producto en el archivo products,json, validando que no falte información antes de guardarlo.
+
+- deleteProducts: Elimina un producto por su ID, validando errores si no se encuentra.
+
+- updateProducts: Actualiza un producto existente, también validando si el ID es correcto.
+
+
+
+inventarioRut:
+
+1) Importaciones: Traemos express para manejar rutas y el inventarioController.
+
+2) Definición de rutas:
+
+- GET /: Obtiene todos los productos.
+- POST /: Agrega un nuevo producto.
+- DELETE /:id: Elimina un producto específico por su ID.
+- PUT /:id: Actualiza un producto existente por su ID.
+
+3)Exportación: Al final, exportamos el router para que se use en la aplicación principal.
